@@ -1,20 +1,26 @@
-let notas = 0;
-let soma = 0;
-let i = 0;
+let saldo = Math.floor(Math.random() * 1000) + 1;
+
+let saque = 0;
+
+alert(`Você tem R$ ${saldo} de saldo`);
 
 do {
 
-    notas = parseFloat(prompt("Insira sua nota:"));
-    i++;
-    soma += notas;
+    saque = parseFloat(prompt("Insira o valor do seu saque:"));
 
-    if (isNaN(notas) || notas < 0 || notas > 10) {
+    if (isNaN(saque) || saque > saldo || saque <= 0) {
 
-        i--;
-        soma -= notas;
+        alert("Você digitou um número inválido");
+
+    } else {
+
+        saldo = saldo - saque;
+
+        alert(`Você ainda tem R$ ${saldo}`);
 
     }
 
-} while (notas >= 0 && notas <= 10);
+} while (saldo > 0);
 
-alert(`A média das suas notas é ${soma / i}`)
+alert("Você zerou o seu saldo!");
+
