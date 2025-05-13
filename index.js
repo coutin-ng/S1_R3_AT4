@@ -1,20 +1,20 @@
-let notas = 0;
-let soma = 0;
-let i = 0;
+let compra = 0;
+let total = 0;
 
 do {
 
-    notas = parseFloat(prompt("Insira sua nota:"));
-    i++;
-    soma += notas;
-
-    if (isNaN(notas) || notas < 0 || notas > 10) {
-
-        i--;
-        soma -= notas;
-
+    compra = parseFloat(prompt("Insira o valor da compra:"));
+    
+    if(isNaN(compra)){
+        
+        alert("Erro: Você não digitou um número válido!");
+        
+    }else {
+        
+        total += compra;
+        
     }
 
-} while (notas >= 0 && notas <= 10);
+} while (compra != 0);
 
-alert(`A média das suas notas é ${soma / i}`)
+alert(`O valor da sua compra é de R$ ${total}!`)
