@@ -1,15 +1,20 @@
-let num = parseFloat(prompt("Insira um número positivo:"));
+let notas = 0;
+let soma = 0;
+let i = 0;
 
-while (num <= 0) {
+do {
 
-    do {
-        num = parseFloat(prompt("Número inválido! Tente novamente:"));
+    notas = parseFloat(prompt("Insira sua nota:"));
+    i++;
+    soma += notas;
 
-    } while (isNaN(num));
+    if (isNaN(notas) || notas < 0 || notas > 10) {
 
-    if (num > 0) {
-
-        alert("Parabéns! Você digitou um número positivo.");
+        i--;
+        soma -= notas;
 
     }
-}
+
+} while (notas >= 0 && notas <= 10);
+
+alert(`A média das suas notas é ${soma / i}`)
